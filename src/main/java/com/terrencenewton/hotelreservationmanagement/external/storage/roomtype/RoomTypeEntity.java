@@ -12,7 +12,8 @@ import lombok.Setter;
                         name = "room_type_name_unique",
                         columnNames = "name"
                 )
-        }
+        },
+        name = "room_type"
 )
 @Getter
 @Setter

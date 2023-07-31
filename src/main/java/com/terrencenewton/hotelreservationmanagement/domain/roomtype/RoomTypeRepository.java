@@ -13,4 +13,6 @@ public interface RoomTypeRepository {
 
     //List<RoomType> findAll();
 
+    Boolean existsById(Integer id);
+
 }

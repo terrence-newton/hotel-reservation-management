@@ -37,4 +37,8 @@ public class RoomTypeStorageAdapter implements RoomTypeRepository {
     public Optional<RoomType> findById(final Integer id) {
         return roomTypeRepository.findById(id).map(mapper::toDomain);
     }
+
+    public Boolean existsById(Integer id) {
+        return roomTypeRepository.existsById(id);
+    }
 }
