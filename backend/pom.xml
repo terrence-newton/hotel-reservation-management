@@ -16,6 +16,9 @@
 	<properties>
 		<java.version>17</java.version>
 		<mapstruct.version>1.4.2.Final</mapstruct.version>
+		<docker.username>tjnewton</docker.username>
+		<docker.image.name>hotel-reservation-management-api</docker.image.name>
+		<docker.image.tag/>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -105,6 +108,32 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.3.2</version>
+				<configuration>
+					<from>
+						<image>eclipse-temurin:17</image>
+						<platforms>
+							<platform>
+								<architecture>arm64</architecture>
+								<os>linux</os>
+							</platform>
+							<platform>
+								<architecture>amd64</architecture>
+								<os>linux</os>
+							</platform>
+						</platforms>
+					</from>
+					<to>
+						<image>docker.io/${docker.username}/${docker.image.name}:${docker.image.tag}</image>
+						<tags>
+							<tag>latest</tag>
+						</tags>
+					</to>
 				</configuration>
 			</plugin>
 		</plugins>
